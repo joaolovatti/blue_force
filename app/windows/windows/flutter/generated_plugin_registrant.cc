@@ -6,9 +6,9 @@
 
 #include "generated_plugin_registrant.h"
 
-#include <desktop_window/desktop_window_plugin.h>
+#include <connectivity_plus/connectivity_plus_windows_plugin.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
-  DesktopWindowPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("DesktopWindowPlugin"));
+  ConnectivityPlusWindowsPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("ConnectivityPlusWindowsPlugin"));
 }
