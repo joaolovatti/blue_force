@@ -1,10 +1,10 @@
 import 'package:flutter/services.dart';
 import 'package:windows/constants/app_colors.dart';
-import 'package:windows/pages/find_cameras_page.dart';
-import 'pages/landing_page.dart';
+import 'package:windows/logic/lan_security_camera.dart';
+import 'package:windows/pages/automatic_cameras_connection_page.dart';
+// import 'pages/landing_page.dart';
 import 'package:flutter/material.dart';
-
-import 'pages/testing_page.dart';
+import 'package:windows/pages/landing_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,15 @@ class MyApp extends StatelessWidget {
         primaryColor: AppColors.primaryColor,
         useMaterial3: true,
       ),
-      home: const LandingPage(),
+      home: AutomaticCamerasConnectionPage(
+        identifiedCameras: [
+          LANSecurityCamera(
+              ip: "192.168.0.148",
+              login: null,
+              password: null,
+              urlPattern554: null)
+        ],
+      ),
     );
   }
 }
